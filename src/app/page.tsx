@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
+import UserTable from "@/components/UserTable";
 
 export default function Home() {
   return (
@@ -18,6 +19,11 @@ export default function Home() {
           A barebones Next.js dashboard with PostgreSQL and Prisma ORM
         </p>
       </header>
+
+      {/* User Table */}
+      <div className="my-8">
+        <UserTable />
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <Card>
