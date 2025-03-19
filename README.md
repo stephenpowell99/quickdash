@@ -1,15 +1,22 @@
-# QuickDash
+# QuickDash AI
 
-A barebones Next.js dashboard application with PostgreSQL and Prisma ORM.
+QuickDash AI is a SaaS application that connects to QuickBooks Online to create AI-powered financial dashboards and reports. Users can generate custom dashboards using natural language prompts and share them with team members.
+
+## Features
+
+- **AI-Powered Dashboard Creation**: Create custom financial reports using simple text prompts.
+- **QuickBooks Online Integration**: Securely connect to your accounting data.
+- **Team Permissions**: Share dashboards with controlled access.
+- **Responsive Design**: Works on desktop, tablet, and mobile.
 
 ## Tech Stack
 
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
-- Prisma ORM
-- PostgreSQL
-- shadcn/ui (to be implemented)
+- **Frontend**: Next.js 15, React 19, Tailwind CSS, shadcn/ui
+- **Backend**: Next.js API routes
+- **Database**: PostgreSQL with Prisma ORM
+- **Authentication**: (To be implemented)
+- **AI**: (To be implemented)
+- **QuickBooks Integration**: (To be implemented)
 
 ## Getting Started
 
@@ -21,7 +28,7 @@ A barebones Next.js dashboard application with PostgreSQL and Prisma ORM.
 3. Set up your PostgreSQL database
 4. Update the `.env` file with your database connection string:
    ```
-   DATABASE_URL="postgresql://username:password@localhost:5432/dbname?schema=public"
+   DATABASE_URL="postgresql://username:password@localhost:5432/quickdash?schema=public"
    ```
 5. Generate Prisma client:
    ```
@@ -69,11 +76,9 @@ Before deploying to production, build the application:
 npm run build
 ```
 
-Then deploy your application along with the database migrations:
+## License
 
-```
-npx prisma migrate deploy
-```
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Learn More
 
