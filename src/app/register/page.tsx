@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -16,6 +17,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { AlertCircle } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+
+// Brand colors
+const brandGreen = "#4CAF50";
+const brandDark = "#323232";
 
 export default function RegisterPage() {
   const [name, setName] = useState("");
@@ -66,14 +71,30 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <Card className="w-full max-w-md">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
+      <div className="w-full max-w-md flex flex-col items-center mb-6">
+        <Link href="/" className="mb-8 block">
+          <Image
+            src="/images/quickdash-logo.png"
+            alt="QuickDash AI Logo"
+            width={180}
+            height={48}
+            priority
+            className="cursor-pointer"
+          />
+        </Link>
+      </div>
+
+      <Card
+        className="w-full max-w-md border-t-4"
+        style={{ borderTopColor: brandGreen }}
+      >
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold">
-            Create an account
+          <CardTitle className="text-2xl font-bold text-center">
+            Create Account
           </CardTitle>
-          <CardDescription>
-            Enter your information to create an account
+          <CardDescription className="text-center">
+            Sign up for your 14-day free trial
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
@@ -85,7 +106,7 @@ export default function RegisterPage() {
               </Alert>
             )}
             <div className="space-y-2">
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name">Full Name</Label>
               <Input
                 id="name"
                 type="text"
@@ -95,6 +116,7 @@ export default function RegisterPage() {
                   setName(e.target.value)
                 }
                 required
+                className="border-gray-300 focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50"
               />
             </div>
             <div className="space-y-2">
@@ -108,6 +130,7 @@ export default function RegisterPage() {
                   setEmail(e.target.value)
                 }
                 required
+                className="border-gray-300 focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50"
               />
             </div>
             <div className="space-y-2">
@@ -120,18 +143,28 @@ export default function RegisterPage() {
                   setPassword(e.target.value)
                 }
                 required
+                className="border-gray-300 focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50"
               />
+              <p className="text-xs text-gray-500 mt-1">
+                Must be at least 8 characters
+              </p>
             </div>
           </CardContent>
           <CardFooter className="flex flex-col space-y-4">
-            <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? "Creating account..." : "Register"}
+            <Button
+              type="submit"
+              className="w-full text-white"
+              style={{ backgroundColor: brandGreen }}
+              disabled={isLoading}
+            >
+              {isLoading ? "Creating account..." : "Create Account"}
             </Button>
             <div className="text-center text-sm">
               Already have an account?{" "}
               <Link
                 href="/login"
-                className="text-blue-600 hover:text-blue-800 font-medium"
+                className="font-medium hover:underline"
+                style={{ color: brandGreen }}
               >
                 Log in
               </Link>
