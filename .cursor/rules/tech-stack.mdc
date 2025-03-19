@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Tech stack
+
+- next.js for front and backend using typescript
+- an orm that supports typescript
+- postgresql for database
+- shadcn for the ui component library
+- tailwindcss
