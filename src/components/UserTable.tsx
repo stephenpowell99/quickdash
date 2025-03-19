@@ -165,7 +165,7 @@ export default function UserTable() {
                     colSpan={columns.length}
                     className="px-4 py-6 text-center text-muted-foreground"
                   >
-                    No users found. Make sure you've run the database seed.
+                    No users found. Make sure you&apos;ve run the database seed.
                   </td>
                 </tr>
               )}
